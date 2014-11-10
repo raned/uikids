@@ -1,0 +1,31 @@
+
+.left_eye {
+    position: absolute;
+    left: 80px;
+    top:  50px;
+    width:  80px;
+    height: 80px;
+    background: url(../../images/eyeblue.png) no-repeat;
+     background-size: 80px;
+}
+
+.right_eye {
+    position: absolute;
+    left: 80px;
+    top:  50px;
+    width:  80px;
+    height: 80px;
+    background: url(../../images/eyeblue.png) no-repeat;
+    background-size: 80px;
+}
+
+
+/** to obtain a cheap 'smooth' effect on the flies **/
+.slick {
+  -webkit-transition: all 0.3s ease-out;
+  -khtml-transition:  all 0.3s ease-out;
+  -moz-transition:    all 0.3s ease-out;
+  -o-transition:      all 0.3s ease-out;
+  transition:         all 0.3s ease-out;
+}
+

@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+
+    <title></title>
+
+    <meta http-equiv="content-type" CONTENT="text/html; charset=utf-8" />
+    <script language="JavaScript" type="text/javascript" src="http://vhost.oddcast.com/vhost_embed_functions.php?acc=15679&js=1&followCursor=1"></script>
+    <script language="JavaScript" type="text/javascript" src="http://www.sitepal.com/scripts/cookieUtils.js"></script>
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script language="JavaScript" type="text/javascript" src="static/js/ttsJS.js"></script>
+    <script language="javascript" type="text/javascript">
+        window.onload = Init;
+        var speechLimit = 19; // total allowances minus 1 (for 10 plays, put 9)
+        var fromOddcast = /^http:\/\/.*(oddcast\.com|sitepal\.com)/i.test(document.referrer);
+
+        function Init() {
+            try {
+                IEsetup();
+                setTTSForm(1, 301003);
+            } catch (e) {
+                alert(e);
+            }
+        }
+
+        function IEsetup() {
+            if (!document.all)
+                return;
+            IE5 = navigator.appVersion.indexOf("5.") != -1;
+            if (!IE5) {
+                for (i = 0; i < document.forms.length; i++) {
+                    document.forms[i].reset();
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        <!--
+        /*global*/
+        body {
+            margin: 0px;
+        }
+        #omniture {
+            height: 1px;
+            overflow: hidden;
+            display: none;
+        }
+        #container {
+            width: 426px;
+            margin-top: 0px;
+        }
+        .header {
+            text-align: left;
+            width: 426px;
+            height: 40px;
+        }
+        .ttslogo {
+            float: left;
+            width: 248px;
+            height: 40px;
+            padding-left: 7px;
+        }
+        .logo {
+            float: left;
+            width: 171px;
+            height: 40px;
+        }
+        #flashcontainer {
+            width: 426px;
+            height: 314px;
+            text-align: center;
+            padding-top: 14px;
+        }
+        #formcontainer {
+            width: 426px;
+            height: 106px;
+            text-align: left;
+        }
+        #vwContainer {
+            /*width:426px;*/
+            width: 468px;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        #formcontainer form {
+            margin: 0;
+        }
+        #formcontainer #textToSay {
+            border: 1px solid #BDBCBF;
+            margin: 4px 0 0 16px;
+            width: 120px;
+        }
+        #formcontainer select {
+            border: 1px solid #BDBCBF;
+            margin: 4px 0 0 16px;
+            width: 110px
+        }
+        #formcontainer label {
+            display: block;
+            padding: 10px 0 0 16px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 14px;
+            color: #FF7900;
+        }
+        .button {
+            margin: 12px 10px 0 0;
+        }
+        .tagline {
+            margin: 1px 0 6px 0;
+            font-family: Verdana, arial, helvetica, sans-serif;
+            font-size: 10px;
+            text-align: center;
+        }
+        .tagline a {
+            font-weight: bold;
+        }
+        .tagline a:hover {
+            text-decoration: none;
+        }
+        #tagSitepal,
+        #tagSitepal a {
+            color: #303F50;
+        }
+        #tagOddcast,
+        #tagOddcast a {
+            color: #4E4E4E;
+        }
+        /* Sitepal */
+        body.sitepal {
+            background: #bac9cf;
+        }
+        body.sitepal #flashcontainer {
+            background: url('images/tts_sitepal_flash_back.gif') no-repeat;
+        }
+        body.sitepal #formcontainer {
+            background: url('images/tts_sitepal_form_back.gif') no-repeat;
+        }
+        body.sitepal #oddcastHeader {
+            display: none;
+        }
+        body.sitepal #oddcastButton {
+            display: none;
+        }
+        body.sitepal #tagOddcast {
+            display: none;
+        }
+        /* Oddcast */
+        body.oddcast {
+            background: #e0e0e0;
+        }
+        body.oddcast #flashcontainer {
+            background: url('images/tts_oddcast_flash_back.gif') no-repeat;
+            ;
+        }
+        body.oddcast #formcontainer {
+            background: url('images/tts_oddcast_form_back.gif') no-repeat;
+            ;
+        }
+        body.oddcast #sitepalHeader {
+            display: none;
+        }
+        body.oddcast #sitepalButton {
+            display: none;
+        }
+        body.oddcast #tagSitepal {
+            display: none;
+        }
+        a#vw_link:link,
+        a#vw_link:visited,
+        a#vw_link:hover,
+        a#vw_link:active {
+            font-family: Verdana, arial, helvetica, sans-serif;
+            font-size: 12px;
+            color: #4E4E4E;
+            font-weight: bold;
+        }
+        -->
+    </style>
+
+</head>
+
+<body>
+
+    <div id="omniture">
+
+        <script language="JavaScript" type="text/javascript" src="/scripts/s_code.js"></script>
+        <script language="JavaScript" type="text/javascript">
+            <!--
+            /* You may give each page an identifying name, server, and channel on
+the next lines. */
+            if (location.search.indexOf('sitepal') != -1) {
+                document.body.className = "sitepal";
+
+                s.pageName = "SitePal Text-to-Speech (TTS) Demo"
+
+                if (window.OmnitureValues) OmnitureValues();
+            } else {
+                document.body.className = "oddcast";
+
+                s.pageName = "Oddcast Text-to-Speech (TTS) Demo"
+            }
+
+            s.server = ""
+            s.channel = ""
+            s.pageType = ""
+            s.prop1 = ""
+            s.prop2 = ""
+            s.prop3 = ""
+            s.prop4 = ""
+            s.prop5 = ""
+            /* Conversion Variables */
+            s.campaign = ""
+            s.state = ""
+            s.zip = ""
+            s.events = ""
+            s.products = ""
+            s.purchaseID = ""
+            s.eVar1 = ""
+            s.eVar2 = ""
+            s.eVar3 = ""
+            s.eVar4 = ""
+            s.eVar5 = ""
+            s.eVar6 = "TTS Demo"
+            /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+            var s_code = s.t();
+            if (s_code) document.write(s_code) //-->
+        </script>
+        <script language="JavaScript" type="text/javascript">
+            <!--
+            if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-')
+                //-->
+        </script>
+        <noscript>
+            <a href="http://www.omniture.com" title="Web Analytics">
+                <img src="http://oddcastttsdemos.112.2O7.net/b/ss/oddcastttsdemos/1/H.15.1--NS/0" height="1" width="1" border="0" alt="" />
+            </a>
+        </noscript>
+        <!--/DO NOT REMOVE/-->
+        <!-- End SiteCatalyst code version: H.15.1. -->
+    </div>
+
+    <div align="center">
+        <div id="container">
+
+            <div id="sitepalHeader" class="header">
+                <div id="ttsLogoSitepal" class="ttslogo">
+                    <img src="images/tts_sitepal_tts_logo.gif" width="182" height="40" alt="" border="0" />
+                </div>
+                <div id="sitePalLogo" class="logo">
+                    <a href="http://www.sitepal.com/?affId=48792&bannerId=0&promotionId=5727" target="_blank">
+                        <img src="images/tts_sitepal_logo.gif" width="161" height="40" alt="" border="0" />
+                    </a>
+                </div>
+            </div>
+
+            <div id="oddcastHeader" class="header">
+                <div id="ttsLogoOddcast" class="ttslogo">
+                    <img src="images/tts_oddcast_tts_logo.gif" width="182" height="40" alt="" border="0">
+                </div>
+                <div id="oddcastLogo" class="logo">
+                    <a href="http://www.sitepal.com/?affId=48792&bannerId=0&promotionId=5729" target="_blank">
+                        <img src="images/tts_oddcast_logo.gif" width="156" height="40" alt="" border="0">
+                    </a>
+                </div>
+            </div>
+
+            <div id="flashcontainer">
+                <script language="JavaScript" type="text/javascript">
+                    AC_VHost_Embed_15679(300, 400, 'FFFFFF', 1, 1, 232774, 0, 0, 0, 'aeb9df55bf09a7c61267b50333d5f5d2', 6);
+                </script>
+            </div>
+
+
+            <div id="formcontainer">
+                <form name="newaudio" accept-charset="UTF-8" onsubmit="return false;">
+                    <table width="100%" cellPadding="0" cellSpacing="0" border="0">
+                        <tr>
+                            <td>
+                                <label for="textToSay">Enter Text:</label>
+                            </td>
+                            <td>
+                                <label for="lang">Language:</label>
+                            </td>
+                            <td>
+                                <label for="voice">Voice:</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="textToSay" name="textToSay" minlength="180" />
+                            </td>
+                            <td>
+                                <select id="lang" name="lang" onChange="setVoices()">
+                                    <option>Loading Languages...</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="voice" name="voice" onchange="checkMaleFemale()">
+                                    <option>Loading Voices...</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="effect">Effect:</label>
+                                <select id="effect" name="effect">
+                                    <option value="none">none</option>
+                                    <option value="P">Pitch</option>
+                                    <option value="S">Speed</option>
+                                    <option value="D">Duration</option>
+                                    <option value="T">Echo</option>
+                                    <option value="T">Reverb</option>
+                                    <option value="T">Flanger</option>
+                                    <option value="T">Phase</option>
+                                    <option value="R">Bullhorn</option>
+                                    <option value="W">Whisper</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="level">Level:</label>
+                                <select id="level" name="level"></select>
+                            </td>
+                            <td align="right">
+
+                                <div class="button" id="oddcastButton">
+                                    <input type="image" value="Speak" class="sayButton" name="SayButton" src="" onClick="DoAction(this.form.textToSay.value, this.form.effect.value);" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+
+
+
+        </div>
+
+        <div id="vwContainer">
+
+        </div>
+
+
+
+    </div>
+    <script language="JavaScript" src="valueclick.js"></script>
+    <script language="JavaScript">
+        if (location.search.indexOf('clients') != -1) {
+            //document.getElementById("tagOddcast").style.display = "none";
+            document.getElementById("oddcastLogo").getElementsByTagName('a')[0].href = "http://www.oddcast.com/";
+        }
+
+        function DoAction(sText, sEffect) {
+            debug("doaction() called");
+            if (sText.length < 1)
+                return;
+            speechCount = readCookie('speeches');
+            debug(speechCount);
+            previewTTSVoice(sText, sEffect);
+        }
+
+        function UpdateStatusImg(iStatus) {
+            var oImg = document.getElementById('StatusImg');
+            if (iStatus == 1)
+                oImg.style.visibility = 'visible';
+            else if (iStatus == 0)
+                oImg.style.visibility = 'hidden';
+        }
+
+        function debug(sText) {
+            //alert(sText);
+        }
+    </script>
+
+    <script language="JavaScript">
+        $("#textToSay").val("Once upon a time, in a place far away there lived a donkey.  He didn’t look very smart but he was smart.  He used to eat grass all the time.  He had no owner at all. One  day  a  man  called  James  came. Then  the  donkey  jumped  into  the bushes and made no sound at all.  The donkey stared at James.  When James was  gone, the donkey  still stayed  in  the  bushes  for  2 minutes  because  he knew that the man was going to come back.  James came back with his son Tom, to have a walk with him.  When James and Tom were gone, the donkey saw the house.  But he still kept eating the grass.  When the donkey was full, he went near the house. James wife, Orla, got scared; she never saw a donkey before.  No one saw a donkey  before. But  that  donkey  had  seen  lots  of  people  before. The donkey made a donkey  sound, and  then Orla closed  the door because  she thought that the donkey was angry. Orla  took a bucket and went  to  the well, from  the back door.  The donkey waited near  the house until she was back.  She  took a little while  to come back.  When Orla came back she had the bucket full of water.  She opened the front door and put the bucket near the donkey. The donkey started drinking the water.  When the bucket of water was over he  went  back  wagging  his  tail.   Orla  said to  James and  Tom  that  “Today when  you  went  out  for  a  walk. I  saw  a  funny  looking  thing  that  made  a funny sound and I went to the well with a bucket and took some water and gave it to the funny looking thing and he went back.” Then Tom said “Mom, maybe it was an alien!” Orla and James said   “But everyone knows that there are no aliens.” That time  the  donkey  ran  back  to  their  house. Then  Tom  shouted  “IS  THAT IT MOM!”  Then  Orla  looked  out  of  the  window  and  said  “YES!” Then  she asked, “How about we make that thing as a pet?” Then James and Tom said “Yes!” Then Tom ran over to open door.Then Tom said “Mom, do we have some biscuits?” Orla said   “Yes, we do, you  can  feed  it  to  the  funny  thing.”  Then Orla  gave  five  biscuits  to Tom. Then the donkey made a donkey sound. Tom started laughing and said   “Mom, it makes a funny sound.  Doesn’t it?” Orla said   “Yes, it does.” Then James said   “I think we should give him some name.”  Tom  shouted  “YES!”  Orla  asked  Tom  “So  what’s  the  name”  Tom  says the name is …… hmm this is hard to think.  Maybe…JAKE!” James said “Good idea!”  And they all lived happily ever after with their Jake.");
+
+        $(".sayButton").click();
+    </script>
+
+
+</body>
+
+</html>

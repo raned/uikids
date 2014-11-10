@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>kids</title>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1251">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="static/css/ui.css" rel="stylesheet" media="screen">
+
+    <link href="static/css/face.css" rel="stylesheet">
+    <script src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/mootools-core-1.4.5-nocompat.js"></script>
+    <script src="static/js/Eye.js"></script>
+
+    <script src="static/js/nav.js"></script>
+
+</head>
+
+<body style="background:#fff">
+    <div id="container_ui" style="width:100%">
+
+        <div id="home_menu">
+            <ul>
+                <li>
+                    <h1 class="h">Kids</h1>
+                    <div class="eyes">
+                        <div id="left_eye1" class="left_eye eye"></div>
+                    </div>
+                    
+                </li>
+                <li>
+                    <h1 class="h">Parent</h1>
+                    <div class="eyes">
+                        <div id="right_eye1" class="right_eye eye"></div>
+                    </div>
+                    
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var options1 = {
+                socketRadius: 40, // radius of the circle in which the eye's pupil can move
+                stickToSocket: false, // constraint the eye to the perimeter of the circle
+                bindMouseMove: true,
+                bindTouchMove: false,
+                eventListenerElement: window
+            }
+
+            var leftEye1 = new Eye('left_eye1', options1);
+            var rightEye1 = new Eye('right_eye1', options1);
+
+
+
+
+
+        });
+    </script>
+
+    <!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>-->
+
+</body>
+
+</html>
+
+
