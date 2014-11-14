@@ -8,16 +8,18 @@ body{
     width: 100%;
     height: 100%;
     background: purple;
+    border-radius: 50%;
+   
 }
 
 #home_menu{
-    width:600px;
+    width:60%;
     height: auto;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
-    overflow: hidden;
+    margin-top: 10%;
+   
     
 }
 
@@ -30,11 +32,12 @@ body{
 #home_menu ul li{
     width:40%;
     height: 85%;
-    margin: 2.5%;
+    margin: 5%;
     float: left;
     margin-left: 1.5%;
     margin-top: 0px;
     
+
 }
 
 #home_menu ul li .eyes{

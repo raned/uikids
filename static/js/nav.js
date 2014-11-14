@@ -15,7 +15,7 @@ $(document).ready(function () {
 
             switch (leye.parent().find("h1").html()) {
             case "Kids":
-                location.href = "demo.htm";
+                location.href = "childmenu.html";
                 break;
             case "Parent":
                 break;
