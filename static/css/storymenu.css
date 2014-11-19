@@ -49,35 +49,35 @@ body{
 #story_menu ul li:nth-child(1){
     background: url(../../images/story/11108342-horse-illustration-cartoon.jpg) no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
   
 }
 
 #story_menu ul li:nth-child(2){
     background: url(../../images/story/A_Young_Boy_Hiding_Behind_Some_Bushes_Royalty_Free_Clipart_Picture_090621-122729-430042.jpg) no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
   
 }
 
 #story_menu ul li:nth-child(3){
     background: url(../../images/story/cartoon-horse-on-spring-meadow.jpg) no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
   
 }
 
 #story_menu ul li:nth-child(4){
     background: url(../../images/story/cartoon-scene-with-fisherman-70630576.jpg) no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
   
 }
 
 #story_menu ul li:nth-child(5){
     background: url(../../images/story/index.jpg) no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
   
 }
 
@@ -102,7 +102,8 @@ body{
     float: left;
     width:10%;
     height: 100%;
-    background: #000;
+    background:url(../../images/story/back.png) no-repeat;
+    background-position: 100% 100%;
 }
 
 
